@@ -1,2 +1,10 @@
-# terraform-module-vpc-aws
-terraform module public
+# Terraform AWS VPC Module
+
+## EXAMPLE
+module "vpc-aws" {
+  source  = "guldastakozhobekova/vpc-aws/module"
+  version = "0.0.2"
+
+  vpc_cidr = "10.0.0.0/16"
+  subnet_cidr = ["10.0.1.0/24", "10.0.2.0/24"]
+}

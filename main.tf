@@ -6,9 +6,13 @@ resource "aws_subnet" "main1" {
   cidr_block = var.vpc_cidr[0]
 
   }
-  
+
 resource "aws_subnet" "main2" {
   vpc_id     = aws_vpc.main.id
   cidr_block = var.vpc_cidr[1]
 
   }
+  resource "aws_internet_gateway" "gw" {
+  vpc_id = aws_vpc.main.id
+
+}
